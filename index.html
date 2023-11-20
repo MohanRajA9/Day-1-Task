@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 01 Task</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <div>
+            <h6>Difference between HTTP1.1 vs HTTP2</h6>
+            </div>
+
+        <table>
+        <tr>
+              <th>S.no</th>
+              <th>HTTP1.1</th>
+              <th>HTTP2</th>
+        </tr>
+        <tr>
+            <td>1.</td>
+            <td>The first usable version of HTTP was created in 1997. Because it went through several stages of development, this first version of HTTP was called HTTP/1.1.</td>
+            <td>In 2015, a new version of HTTP called HTTP/2 was created. HTTP/2 solves several problems that the creators of HTTP/1.1 did not anticipate.</td>
+        </tr> 
+        <tr>
+            <td>2.</td>
+            <td>HTTP/1.1 loads resources one after the other, so if one resource cannot be loaded, it blocks all the other resources behind it.</td>
+            <td> HTTP/2 is able to use a single TCP connection to send multiple streams of data at once so that no one resource blocks any other resource. HTTP/2 does this by splitting data into binary-code messages and numbering these messages so that the client knows which stream each binary message belongs to.</td>
+        </tr> 
+        <tr>
+            <td>3.</td>
+            <td>A server only serves content to a client device if the client asks for it. However, this approach is not always practical for modern webpages, which often involve several dozen separate resources that the client must request.</td>
+            <td>HTTP/2 solves this problem by allowing a server to "push" content to a client before the client asks for it. The server also sends a message letting the client know what pushed content to expect.</td>
+        </tr> 
+        <tr>
+            <td>4.</td>
+            <td>Small files load more quickly than large ones. To speed up web performance, both HTTP/1.1 and HTTP/2 compress HTTP messages to make them smaller.</td>
+            <td>HTTP/2 uses a more advanced compression method called HPACK that eliminates redundant information in HTTP header packets. This eliminates a few bytes from every HTTP packet. Given the volume of HTTP packets involved in loading even a single webpage, those bytes add up quickly, resulting in faster loading.</td>
+        </tr> 
+        <tr>
+            <td>5.</td>
+            <td>Prioritization refers to the order in which pieces of content are loaded. Prioritization affects a webpage's load time. In HTTP1.1, certain resources, like large JavaScript files, may block the rest of the page from loading if they have to load first. More of the page can load at once if these render-blocking resources load last.</td>
+            <td>In HTTP/2, developers have hands-on, detailed control over prioritization. This allows them to maximize perceived and actual page load speed to a degree that was not possible in HTTP/1.1. HTTP/2 offers a feature called weighted prioritization. This allows developers to decide which page resources will load first, every time.</td>
+        </tr> 
+         </table>
+        </div>
+
+         <div>
+            <div><h5>Objects And Its Internal Representation In JavaScript</h5></div>
+            <div><p>Objects, in JavaScript, is it’s most important data-type and forms the building blocks for modern JavaScript. These objects are quite different from JavaScript’s primitive data-types(Number, String, Boolean, null, undefined and symbol) in the sense that while these primitive data-types all store a single value each (depending on their types).
+
+                Objects are more complex and each object may contain any combination of these primitive data-types as well as reference data-types.
+                An object, is a reference data type. Variables that are assigned a reference value are given a reference or a pointer to that value. That reference or pointer points to the location in memory where the object is stored. The variables don’t actually store the value.
+                
+                Loosely speaking, objects in JavaScript may be defined as an unordered collection of related data, of primitive or reference types, in the form of “key: value” pairs. These keys can be variables or functions and are called properties and methods, respectively, in the context of an object.
+                
+                For Eg. If your object is a student, it will have properties like name, age, address, id, etc and methods like updateAddress, updateNam, etc.</p></div>
+        </div>
+
+        <div>
+            <h5>Objects and properties</h5></div>
+        <div>
+            <p>A JavaScript object has properties associated with it. A property of an object can be explained as a variable that is attached to the object. Object properties are basically the same as ordinary JavaScript variables, except for the attachment to objects. The properties of an object define the characteristics of the object. You access the properties of an object with a simple dot-notation:
+                <div style="background-color: rgb(243, 168, 210);"><span>objectName.propertyName</span></div>
+            </p>
+
+            <p>Like all JavaScript variables, both the object name (which could be a normal variable) and property name are case sensitive. You can define a property by assigning it a value. For example, let’s create an object named myCar and give it properties named make, model, and year as follows:
+                <div style="background-color: rgb(243, 168, 210);">
+                    <span>var myCar = new Object();</span>
+                    <span>myCar.make = 'Ford';</span>
+                    <span>myCar.model = 'Mustang';</span>
+                    <span>myCar.year = 1969;</span>
+                </div>               
+            </p>
+
+            <p>Unassigned properties of an object are undefined (and not null).
+                <div style="background-color: rgb(243, 168, 210);"><span>myCar.color; // undefined</span></div>
+            </p>
+
+            <p>Properties of JavaScript objects can also be accessed or set using a bracket notation (for more details see property accessors). Objects are sometimes called associative arrays, since each property is associated with a string value that can be used to access it. So, for example, you could access the properties of the myCar object as follows:
+                <div style="background-color: rgb(243, 168, 210);">
+                    <span>myCar['make'] = 'Ford';</span>
+                    <span>myCar['model'] = 'Mustang';</span>
+                    <span>myCar['year'] = 1969;</span>
+                </div>
+            </p>
+
+            <p>An object property name can be any valid JavaScript string, or anything that can be converted to a string, including the empty string. However, any property name that is not a valid JavaScript identifier (for example, a property name that has a space or a hyphen, or that starts with a number) can only be accessed using the square bracket notation. This notation is also very useful when property names are to be dynamically determined (when the property name is not determined until runtime). Examples are as follows:
+                <div style="background-color: rgb(243, 168, 210);">
+                    <span>// four variables are created and assigned in a single go, </span>
+                    <span> // separated by commas</span>
+                    <span> var myObj = new Object(),</span>
+                    <span>str = 'myString',</span>
+                    <span>rand = Math.random(),</span>
+                    <span>obj = new Object();</span>
+                    <span> myObj.type              = 'Dot syntax';</span>
+                    <span>myObj['date created']   = 'String with space';</span>
+                    <span>myObj[str]              = 'String value';</span>
+                    <span>myObj[rand]             = 'Random Number';</span>
+                    <span>myObj[obj]              = 'Object';</span>
+                    <span>myObj['']               = 'Even an empty string';</span>
+                    <span>console.log(myObj);</span>
+                                           
+                        
+                        
+                </div>
+            </p>
+
+            <p>You can also access properties by using a string value that is stored in a variable:
+                <div style="background-color: rgb(243, 168, 210);">
+                    <span>var propertyName = 'make';</span>
+                    <span>myCar[propertyName] = 'Ford';propertyName = 'model';</span>
+                    <span>myCar[propertyName] = 'Mustang';</span>
+             </div>
+            </p>
+
+            <div>
+                <h4>Create JavaScript Object with Object Literal</h4>
+                <p>One of easiest way to create a javascript object is object literal, simply define the property and values inside curly braces as shown below
+                    <div style="background-color: rgb(243, 168, 210);">
+                        <span>let bike = {name: 'SuperSport', maker:'Ducati', engine:'937cc'};</span>
+                    </div>
+                </p>
+            </div>
+
+            <div>
+                <h4>Create JavaScript Object with Constructor</h4>
+                    <p>Constructor is nothing but a function and with help of new keyword, constructor function allows to create multiple objects of same flavor as shown below
+                        <div style="background-color: rgb(243, 168, 210);">                        
+                        <span>function Vehicle(name, maker) {</span>
+                        <span>this.name = name;</span>
+                        <span>this.maker = maker;</span>
+                        <span>}</span>
+                        <span>let car1 = new Vehicle(’Fiesta’, 'Ford’);</span>
+                        <span>let car2 = new Vehicle(’Santa Fe’, 'Hyundai’)</span>
+                        <span>console.log(car1.name);    //Output: Fiesta</span>
+                        <span> console.log(car2.name);    //Output: Santa Fe</span>
+                    </div>
+
+                    </p>
+
+                    <div>
+                        <h4>Using the JavaScript Keyword new</h4>
+                            <p>The following example also creates a new JavaScript object with four properties:
+                                <div style="background-color: rgb(243, 168, 210);">                        
+                                <span>var person = new Object();</span>
+                                <span>person.firstName = “John”;</span>
+                                <span>person.lastName = “Doe”;</span>
+                                <span>person.age = 50;</span>
+                                <span>person.eyeColor = “blue”;</span>
+                               
+                              </div>
+        
+                            </p>
+               
+                    </div>
+
+                    <div>
+                        <h4>Using the Object.create method</h4>
+                        <p>Objects can also be created using the Object.create() method. This method can be very useful, because it allows you to choose the prototype object for the object you want to create, without having to define a constructor function.
+
+                           
+                            <div style="background-color: rgb(243, 168, 210);">
+                                <span> var Animal = {</span>
+                                <span>type: 'Invertebrates',</span>
+                                <span>displayType: function() { </span>
+                                <span> console.log(this.type);</span>
+                                <span> }</span>
+                                <span>};</span>
+                                <span>var animal1 = Object.create(Animal);</span>
+                                <span>animal1.displayType();</span>
+                                <span>// Output:Invertebrates</span>
+                                <span>var fish = Object.create(Animal);</span>
+                                <span>fish.type = 'Fishes';</span>
+                                <span>fish.displayType(); </span>
+                                <span>// Output:Fishes</span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </p>
+                    </div>
+
+        </div>
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+<style>
+    thead,th,td{
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th{
+        text-align: center;
+    }
+    span{
+        display: block;
+    }
+</style>
+</html>
